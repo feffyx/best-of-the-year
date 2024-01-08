@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/resources :: head('Song List')"></head>
+<body>
+
+<main class="container">
+    <h1>Song List</h1>
+    <ul
+            class="list-group mb-3"
+            th:if="${songList.size() > 0}"
+    >
+        <li th:each="song : ${songList}" class="list-group-item">
+            <a th:href="@{/songs/details/{id}(id=${song.id})}">
+                <div th:text="${song.title}"></div>
+            </a>
+        </li>
+    </ul>
+    <div
+            th:unless="${songList.size() > 0}"
+            class="alert alert-info"
+    >The song list is empty
+    </div>
+    <a class="btn btn-primary" th:href="@{/}">Back to Home</a>
+</main>
+<th:block th:replace="fragments/resources :: script"></th:block>
+</body>
+</html>

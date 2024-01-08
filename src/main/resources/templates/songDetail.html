@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/resources :: head('Song Detail')"></head>
+<body>
+
+<main class="container">
+    <h1>Song detail</h1>
+    <dl class="row">
+        <dt class="col-3">Id</dt>
+        <dd class="col-6" th:text="${songId}"></dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-3">Title</dt>
+        <dd class="col-6" th:text="${song.title}"></dd>
+    </dl>
+    <dl class="row">
+        <dt class="col-3">Authors</dt>
+        <dd class="col-6" th:text="${song.authors}"></dd>
+    </dl>
+
+    <a class="btn btn-primary" th:href="@{/songs}">Back to list</a>
+</main>
+<th:block th:replace="fragments/resources :: script"></th:block>
+</body>
+</html>

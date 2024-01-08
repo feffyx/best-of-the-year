@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/resources :: head('Home')"></head>
+<body>
+<div><img th:src="@{/logo.png}" alt="application logo"></div>
+<main class="container">
+    <h1 th:text="|Best of ${year} by ${name}|"></h1>
+    <a class="btn btn-primary" th:href="@{/songs}">Go to song list</a>
+</main>
+<th:block th:replace="fragments/resources :: script"></th:block>
+</body>
+</html>
